@@ -1606,7 +1606,7 @@ function DataPanel({ type, onClose, showToast }) {
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fadeIn">
-      <div className="bg-gradient-to-br from-slate-900/95 to-blue-950/95 border border-cyan-500/50 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-cyan-500/20 hidden-scrollbar">
+      <div className="bg-gradient-to-br from-slate-900/95 to-blue-950/95 border border-cyan-500/50 rounded-3xl p-6 sm:p-8 max-w-xl sm:max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-cyan-500/20 hidden-scrollbar">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-4xl font-black bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
             {data[type].title}
@@ -1637,9 +1637,9 @@ export default function App() {
     <div className="w-screen h-screen bg-black overflow-hidden relative">
       {/* Nebula glow effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-3xl" style={{animation: 'pulse 15s ease-in-out infinite'}}></div>
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-3xl" style={{animation: 'pulse 20s ease-in-out infinite'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl" style={{animation: 'pulse 12s ease-in-out infinite'}}></div>
+        <div className="absolute top-0 left-1/4 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] bg-blue-600/15 rounded-full blur-3xl" style={{animation: 'pulse 15s ease-in-out infinite'}}></div>
+        <div className="absolute bottom-0 right-1/4 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] bg-purple-600/15 rounded-full blur-3xl" style={{animation: 'pulse 20s ease-in-out infinite'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] bg-indigo-600/10 rounded-full blur-3xl" style={{animation: 'pulse 12s ease-in-out infinite'}}></div>
       </div>
 
       {/* Three.js Canvas */}
@@ -1659,12 +1659,12 @@ export default function App() {
       </Canvas>
 
       {/* Header (left-aligned) */}
-      <div className="absolute top-0 left-0 z-30 p-6 pointer-events-auto overflow-visible">
+      <div className="absolute top-0 left-0 z-30 p-4 sm:p-6 pointer-events-auto overflow-visible">
         <div className="flex flex-col">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent drop-shadow-xl leading-relaxed pb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-black bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent drop-shadow-xl leading-relaxed pb-2">
             Sreyansh Verma
           </h1>
-          <p className="text-base sm:text-lg text-cyan-200 mt-1 font-semibold drop-shadow-lg">Full Stack Developer & AI Enthusiast</p>
+          <p className="text-sm sm:text-base text-cyan-200 mt-1 font-semibold drop-shadow-lg">Full Stack Developer & AI Enthusiast</p>
         </div>
       </div>
 
@@ -1678,8 +1678,8 @@ export default function App() {
         <Github size={18} />
         <span className="hidden sm:inline">GitHub</span>
       </a>
-      {/* Bottom Info */}
-      <div className="fixed bottom-0 left-0 right-0 z-10 p-8 text-center pointer-events-none">
+      {/* Bottom Info (hidden on small screens) */}
+      <div className="fixed bottom-0 left-0 right-0 z-10 p-6 text-center pointer-events-none hidden sm:block">
         <p className="text-cyan-300 font-bold text-lg mb-2">🌟 Click on planets to explore my work</p>
         <p className="text-blue-200/70 text-sm">Drag to rotate • Scroll to zoom • Immersive journey through my portfolio</p>
       </div>
@@ -1691,7 +1691,7 @@ export default function App() {
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-8 right-8 z-60 px-4 py-2 rounded-lg bg-black/70 border border-cyan-600/40 text-cyan-200 shadow-lg">{toast}</div>
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 sm:bottom-8 sm:right-8 sm:left-auto sm:translate-x-0 z-60 px-4 py-2 rounded-lg bg-black/70 border border-cyan-600/40 text-cyan-200 shadow-lg">{toast}</div>
       )}
 
       <style>{`
